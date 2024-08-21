@@ -6,8 +6,11 @@ app.http('hello', {
     handler: async (request, context) => {
         context.log(`Http function processed request for url "${request.url}"`);
 
-       
-
-        return { body: `Hello from Azure Functions!` };
+        return {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: { message: 'Hello from Azure Functions!' }
+        };
     }
 });
