@@ -12,6 +12,7 @@ function App() {
         return response.json(); // This will now correctly parse the JSON response
     })
     .then(data => {
+      console.log(data.message);
       setMessage(data.message); // Should log: "Hello from Azure Functions!"
     })
     .catch(error => {
